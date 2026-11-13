@@ -1,4 +1,4 @@
-import{A as e,D as t,_ as n,c as r,j as i,s as a}from"./index-CyK4XF7l.js";var o=class{parse(o){let s=``,c=0,l=0,u=0,d=new i,f=new a,p=new i,m=new e,h=[];function g(e){let i=0,a=0,o=0,g=e.geometry,_=new n,v=g.getAttribute(`position`),y=g.getAttribute(`normal`),b=g.getAttribute(`uv`),x=g.getAttribute(`color`),S=g.getIndex();if(s+=`o `+e.name+`
+import{A as e,D as t,_ as n,c as r,j as i,s as a}from"./index-CpKatAAd.js";var o=class{parse(o){let s=``,c=0,l=0,u=0,d=new i,f=new a,p=new i,m=new e,h=[];function g(e){let i=0,a=0,o=0,g=e.geometry,_=new n,v=g.getAttribute(`position`),y=g.getAttribute(`normal`),b=g.getAttribute(`uv`),x=g.getAttribute(`color`),S=g.getIndex();if(s+=`o `+e.name+`
 `,e.material&&e.material.name&&(s+=`usemtl `+e.material.name+`
 `),v!==void 0)for(let n=0,a=v.count;n<a;n++,i++)d.fromBufferAttribute(v,n),d.applyMatrix4(e.matrixWorld),s+=`v `+d.x+` `+d.y+` `+d.z,x!==void 0&&(f.fromBufferAttribute(x,n),r.workingToColorSpace(f,t),s+=` `+f.r+` `+f.g+` `+f.b),s+=`
 `;if(b!==void 0)for(let e=0,t=b.count;e<t;e++,o++)m.fromBufferAttribute(b,e),s+=`vt `+m.x+` `+m.y+`
