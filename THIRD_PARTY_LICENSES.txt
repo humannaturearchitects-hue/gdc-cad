@@ -15,6 +15,9 @@ GDC GOOD DESIGN CAD 同梱ソフトウェアのライセンス / Third-party lic
 ■ 一覧
 
   - @anthropic-ai/sdk 1.8.0  (Apache-2.0)  ※ AI 機能（任意・オンにしたときだけ通信）
+  - @mlc-ai/web-llm 0.2.88  (Apache-2.0)  ※ 端末内 AI（ダウンロードしたときだけ使う。モデルは Hugging Face から取得）
+  - @mlc-ai/web-runtime 0.28.0-dev2 / web-tokenizers 0.1.6 / web-xgrammar 0.1.27  (Apache-2.0)  ※ 上の部品
+  - 端末内 AI のモデル: Qwen2.5-0.5B / 1.5B-Instruct（Apache-2.0、Alibaba Cloud）。アプリには含まれず、利用者が同意したときにだけダウンロード
   - @opentelemetry/api 1.10.0  (Apache-2.0)  ※ 上の SDK が使う部品。何も送信しません
   - @babel/runtime 7.29.13  (MIT)
   - base64-arraybuffer 1.0.2  (MIT)
