@@ -1,5 +1,5 @@
-self.__PRECACHE__ = ["./","./.nojekyll","./assets/GLTFExporter-DvJNtIgj.js","./assets/NotoSansJP-sub-Dxpr_DLo.ttf","./assets/OBJExporter-DyF9MYqS.js","./assets/__vite-browser-external-BYdhicHK.js","./assets/html2canvas-DcWmblok.js","./assets/index-CQGzYeBb.js","./assets/index-CbYZAyG2.css","./assets/index.es-CYxUvaWy.js","./assets/jspdf.es.min-DhpRy_2V.js","./assets/localai.worker-CoKIQcaJ.js","./assets/node.browser-BaNbTiRU.js","./assets/node.browser-trKAMP9i.js","./assets/purify.es-CmFH7t8M.js","./assets/replicad_single-g5eiaENB.wasm","./assets/svg2pdf.es.min-DWOUsc3r.js","./icons/apple-touch-icon.png","./icons/favicon-64.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png","./index.html","./manifest.webmanifest"];
-self.__BUILD__ = "mwl2ta97";
+self.__PRECACHE__ = ["./","./.nojekyll","./assets/GLTFExporter-BZIRYycF.js","./assets/NotoSansJP-sub-Dxpr_DLo.ttf","./assets/OBJExporter-B7T4o-_o.js","./assets/__vite-browser-external-BYdhicHK.js","./assets/html2canvas-BwZEWgKt.js","./assets/index-BJjhDVnv.css","./assets/index-BdIe8fWQ.js","./assets/index.es-ChPwqANy.js","./assets/jspdf.es.min-C6s6sapz.js","./assets/localai.worker-CoKIQcaJ.js","./assets/node.browser-0465Fi3w.js","./assets/node.browser-DSCJQS7H.js","./assets/purify.es-CmFH7t8M.js","./assets/replicad_single-g5eiaENB.wasm","./assets/svg2pdf.es.min-C4To_Jna.js","./icons/apple-touch-icon.png","./icons/favicon-64.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png","./index.html","./manifest.webmanifest"];
+self.__BUILD__ = "mwu0sg62";
 // GDC GOOD DESIGN CAD オフライン用 Service Worker
 // 一度開いたファイル（本体・CADエンジン・フォント）を端末に保存し、電波がなくても起動できるようにする
 // PRECACHE はビルド時に全ファイルの一覧へ置き換わる
@@ -18,6 +18,8 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET" || new URL(req.url).origin !== self.location.origin) return;
+  // AI エージェント接続（MCP）のやり取りは保存しない（毎回サーバーに問い合わせる）
+  if (new URL(req.url).pathname.includes("/gdc-agent/")) return;
   const isPage = req.mode === "navigate";
   e.respondWith((async () => {
     const cache = await caches.open(CACHE);
