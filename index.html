@@ -13,8 +13,8 @@
 <title>GDC GOOD DESIGN CAD</title>
 <link rel="preload" href="./assets/replicad_single-g5eiaENB.wasm" as="fetch" type="application/wasm" crossorigin />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e8732a'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-weight='700' font-size='11' fill='white' text-anchor='middle'%3EGDC%3C/text%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="./assets/index-CQGzYeBb.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CbYZAyG2.css">
+  <script type="module" crossorigin src="./assets/index-BvSkgBGL.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DXp7GrRC.css">
 </head>
 <body>
 <div id="boot-msg" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;font:15px -apple-system,'Hiragino Sans',sans-serif;color:#2b3038;background:#eef1f5;z-index:9999;padding:20px;text-align:center">
@@ -50,6 +50,7 @@
       <div class="ws-switch">
         <button class="ws active" data-ws="design">デザイン</button>
         <button class="ws" data-ws="drawing">図面</button>
+        <button class="ws" data-ws="interior" title="部屋の 3D スキャンから内装を自動設計し、平面図・展開図・部材表を作ります">内装</button>
       </div>
     </div>
     <div class="tb-tabs" id="tabs"></div>
@@ -85,6 +86,7 @@
       <div id="busy" class="hidden"><span class="spin"></span><span id="busy-msg">計算中…</span></div>
     </section>
     <section id="drawing-ws" class="hidden"></section>
+    <section id="interior-ws" class="hidden"></section>
   </main>
   <footer id="timeline"></footer>
   <div id="statusbar"><span id="status-hint">準備完了</span><span id="status-coord"></span></div>
